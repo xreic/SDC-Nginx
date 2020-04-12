@@ -5,12 +5,13 @@ import exit from '../../dist/assets/exit.png';
 
 let collections = [
   ...require('../../../database/pregeneratedData/collection.js'),
-  ...["Men's Shoe", "Women's Shoe", "Running", "Run"]
+  ...["Men's Shoe", "Women's Shoe", 'Running', 'Run']
 ];
 
 export default class SearchModal extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       suggestions: [],
       selected: '',
@@ -23,7 +24,9 @@ export default class SearchModal extends React.Component {
     var keyword = this.props.keyword;
     const regex = new RegExp(keyword, 'i');
     var match = collections.filter((collection) => collection.match(regex));
+
     console.log(match);
+
     if (match.length > 0) {
       var shortenedMatch = match.splice(0, 6);
       this.setState(
