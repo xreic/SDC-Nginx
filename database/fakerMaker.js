@@ -9,15 +9,9 @@ const path = require('path');
 const location = path.join(__dirname, '/pregeneratedData');
 
 // Base set
-const items = {};
 const collections = {};
 
 const arraySeeder = () => {
-  // Generate fake product names
-  while (Object.keys(items).length !== 4000) {
-    items[faker.commerce.productName()] = 1;
-  }
-
   // Generate lorem ispum words to use for collection
   const collection = faker.lorem.words(1000).split(' ');
   var counter = 0;
@@ -33,13 +27,6 @@ const arraySeeder = () => {
 };
 
 arraySeeder();
-
-fs.writeFileSync(
-  path.join(location, 'items.js'),
-  `module.exports = ${JSON.stringify(Object.keys(items))};`,
-  'utf8'
-);
-
 fs.writeFileSync(
   path.join(location, 'collection.js'),
   `module.exports = ${JSON.stringify(Object.keys(collections))};`,
