@@ -18,7 +18,7 @@ export default class SearchModalProducts extends React.Component {
           <div className="product" onClick={(e) => this.handleSelect(product)}>
             <img
               height="120px"
-              src={product.image}
+              src={`https://sdc-stats.s3-us-west-1.amazonaws.com/shoes/${product.image}.jpg`}
               className="product-photo"
             ></img>
             <div className="product-text">
