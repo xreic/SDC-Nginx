@@ -8,8 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react": "webpack -d",
-    "data": "node database/fakerMaker.js"
+    "react": "webpack -d"
   },
   "dependencies": {
     "axios": "0.19.2",
