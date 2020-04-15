@@ -1,6 +1,9 @@
 upstream cluster {
-	server 18.144.176.212:3000;
+	server 52.53.224.16:3000;
+#	server 13.57.15.126:3000;
 }
+
+proxy_cache_path /tmp/cache keys_zone=cache:10m levels=1:2 inactive=1800s max_size=4g;
 
 server {
 	listen 80;
@@ -14,6 +17,19 @@ server {
 	}
 
 	location /search {
+		root dir;
+		proxy_buffering on;
+		proxy_cache cache;
+		proxy_cache_lock on;
+
+		proxy_cache_valid 600s;
+		proxy_cache_methods GET HEAD;
+		proxy_cache_key "$request_uri|$request_body";
+	        proxy_ignore_headers Vary;
+
+		add_header X-Cached $upstream_cache_status;
+		add_header Cache-Control "no-cache, must-revalidate, max-age=0";		
+
 		proxy_pass http://cluster;
 	}
 }
