@@ -45,14 +45,3 @@ npm run react
 1. Adjust `front` to your needs
 2. Put it in `sites-available` of Nginx folder
 3. Create a symbolic link from file to `sites-enabled`
-
-## Notes
-If `npm pSeed` shows an error saying **Fail**, exit immediately and re-run
-
-If you receive this error upon testing for pSQL, just run it again
-```sh
-error: syntax error at or near "s"
-  at Connection.parseE (node_modules/pg/lib/connection.js:600:48)
-  at Connection.parseMessage (node_modules/pg/lib/connection.js:399:19)
-  at Socket.<anonymous> (node_modules/pg/lib/connection.js:115:22)
-```
