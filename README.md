@@ -34,6 +34,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ## Development
 
 ### Installing Dependencies
+
 From within the root directory:
 
 ```sh
@@ -42,6 +43,7 @@ npm run react
 ```
 
 ### Nginx setup
+
 1. Adjust `front` to your needs
 2. Put it in `sites-available` of Nginx folder
 3. Create a symbolic link from file to `sites-enabled`
