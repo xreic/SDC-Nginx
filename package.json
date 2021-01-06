@@ -11,7 +11,7 @@
     "react": "webpack -d"
   },
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "css-loader": "3.4.2",
     "file-loader": "6.0.0",
     "react": "16.13.1",
